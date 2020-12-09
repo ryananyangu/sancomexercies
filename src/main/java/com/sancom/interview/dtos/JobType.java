@@ -10,7 +10,7 @@ public class JobType {
 
 
     @ApiModelProperty(position = 0)
-    private long id;
+    private Integer id;
 
     @ApiModelProperty(position = 1)
     private String name;

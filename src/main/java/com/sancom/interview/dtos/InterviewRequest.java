@@ -13,11 +13,11 @@ public class InterviewRequest {
 
 
     @ApiModelProperty(position = 0)
-    private int job;
+    private Integer job;
 
 
     @ApiModelProperty(position = 1)
-    private int user;
+    private Integer user;
 
 
     @ApiModelProperty(position = 2)

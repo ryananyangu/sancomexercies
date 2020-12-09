@@ -33,7 +33,7 @@ public class Job extends Auditable<String>{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Integer id;
 
     @Size(min = 4, max = 255, message = "Minimum username length: 4 characters")
     @Column(unique = false, nullable = false)

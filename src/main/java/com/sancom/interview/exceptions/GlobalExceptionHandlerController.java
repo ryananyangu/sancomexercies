@@ -32,7 +32,7 @@ public class GlobalExceptionHandlerController {
 
   @ExceptionHandler(CustomException.class)
   public void handleCustomException(HttpServletResponse res, CustomException ex) throws IOException {
-    res.sendError(ex.getHttpStatus().value(), ex.getMessage());
+    res.sendError(ex.getHttpStatus().value(), null);
   }
 
   @ExceptionHandler(AccessDeniedException.class)
