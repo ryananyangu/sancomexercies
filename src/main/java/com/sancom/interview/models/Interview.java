@@ -2,10 +2,11 @@ package com.sancom.interview.models;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.validation.constraints.Size;
+import javax.persistence.ManyToOne;
 
 import org.hibernate.envers.Audited;
 
@@ -13,15 +14,20 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 @Entity
-@Data
 @Audited
+@Data
 @EqualsAndHashCode(callSuper = false)
-public class JobType  extends Auditable<String>{
+public class Interview  extends Auditable<String>{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Size(min = 4, max = 255, message = "Minimum username length: 4 characters")
-    @Column(unique = true, nullable = false)
-    private String name;
+    // @Column(unique = false, nullable = false)
+    @ManyToOne(fetch = FetchType.EAGER)
+    private Job job;
+
+    // @Column(unique = false, nullable = false)
+    @ManyToOne(fetch = FetchType.EAGER)
+    private User user;
+    
 }

@@ -13,8 +13,6 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-// import springfox.documentation.swagger2.annotations.EnableSwagger2;
-
 // @EnableSwagger2
 @Configuration
 @EnableWebSecurity
@@ -35,8 +33,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     // Entry points
     http.authorizeRequests()//
-        .antMatchers("/users/signin").permitAll()//
-        .antMatchers("/users/signup").permitAll()//
+        .antMatchers("/api/v1/user/signin").permitAll()//
+        .antMatchers("/api/v1/user/signup").permitAll()//
         .antMatchers("/h2-console/**/**").permitAll()
         // Disallow everything else..
         .anyRequest().authenticated();

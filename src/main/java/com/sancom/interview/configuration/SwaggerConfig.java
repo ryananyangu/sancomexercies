@@ -41,15 +41,17 @@ public class SwaggerConfig {
         .useDefaultResponseMessages(false)//
         .securitySchemes(Collections.singletonList(apiKey()))
         .securityContexts(Collections.singletonList(securityContext()))
-        .tags(new Tag("users", "Basic user CRUD operations"))//
-        .genericModelSubstitutes(Optional.class);
+        .tags(
+          new Tag("user", "Basic user CRUD operations"),
+          new Tag("job", "Basic Job CRUD operations")
+        ).genericModelSubstitutes(Optional.class);
 
   }
 
   private ApiInfo metadata() {
     return new ApiInfoBuilder()//
-        .title("Switchlink Transaction API application")//
-        .description("Basic transaction application for withdrawing and transfering of funds")//
+        .title("Sancom API Documentation application")//
+        .description("Basic Job searching and interviewing application")//
         .version("1.0.0")//
         .license("MIT License").licenseUrl("http://opensource.org/licenses/MIT")//
         .contact(new Contact(null, null, "ryananyangu@gmail.com"))//

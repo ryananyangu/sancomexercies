@@ -13,6 +13,7 @@ import com.sancom.interview.exceptions.CustomException;
 import com.sancom.interview.models.Role;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -33,8 +34,8 @@ public class JwtTokenProvider {
    * THIS IS NOT A SECURE PRACTICE! For simplicity, we are storing a static key here. Ideally, in a
    * microservices environment, this key would be kept on a config-server.
    */
-//   @Value("${security.jwt.token.secret-key:secret-key}")
-  private String secretKey = "Test";//System.getenv("SECRET"); 
+  @Value("${security.jwt.token.secret-key:secret-key}")
+  private String secretKey;//System.getenv("SECRET"); 
 
   // @Value("${security.jwt.token.expire-length:3600000}")
   private long validityInMilliseconds = 3600000; // 1h
