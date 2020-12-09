@@ -43,7 +43,8 @@ public class SwaggerConfig {
         .securityContexts(Collections.singletonList(securityContext()))
         .tags(
           new Tag("user", "Basic user CRUD operations"),
-          new Tag("job", "Basic Job CRUD operations")
+          new Tag("job", "Basic Job CRUD operations"),
+          new Tag("interview", "Basic interview CRUD operations")
         ).genericModelSubstitutes(Optional.class);
 
   }

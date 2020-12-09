@@ -1,6 +1,6 @@
 package com.sancom.interview.dtos;
 
-import java.sql.Date;
+import java.util.Date;
 import com.sancom.interview.models.Job.Status;
 
 import io.swagger.annotations.ApiModelProperty;
