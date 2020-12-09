@@ -16,10 +16,12 @@ import javax.validation.constraints.Size;
 import org.hibernate.envers.Audited;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 @Entity
 @Audited
 @Data
+@EqualsAndHashCode(callSuper = false)
 public class User extends Auditable<String>{
 
   public enum EducationLevel {

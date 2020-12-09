@@ -10,9 +10,9 @@ ADD ./target/*.jar ./target/
 
 RUN chmod 755 -R ./target/*.jar
 
-# ARG SECRET
+ARG SECRET
 
 
-# ENV SECRET=${SECRET}
+ENV SECRET=${SECRET}
 
 ENTRYPOINT ["java","-jar","target/interview-0.0.1-SNAPSHOT.jar"]
